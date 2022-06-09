@@ -1,4 +1,4 @@
-package web.controller;
+package ru.pavel_java_dev.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,7 +18,8 @@ public class HelloController {
 		messages.add("I'm Spring MVC application");
 		messages.add("5.2.0 version by sep'19 ");
 		model.addAttribute("messages", messages);
+
 		return "index";
 	}
-	
+
 }
