@@ -35,10 +35,6 @@ public class CarServiceImpl implements CarService {
     }
 
     public List<Car> listCars(int n) {
-        if (n < 5) {
-            return cars.subList(0, n);
-        } else {
-            return cars;
-        }
+        return n < 5 ? cars.subList(0, n) : cars;
     }
 }
