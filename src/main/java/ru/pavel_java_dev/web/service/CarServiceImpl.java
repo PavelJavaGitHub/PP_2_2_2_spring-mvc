@@ -8,12 +8,12 @@ import java.util.List;
 
 @Component
 public class CarServiceImpl implements CarService {
-    private static long count;
+    private static Long count;
     private final List<Car> cars;
 
     public CarServiceImpl() {
         cars = new ArrayList<>();
-        count = 0;
+        count = 0L;
 
         cars.add(new Car(++count, "BMW", 7));
         cars.add(new Car(++count, "Mercedes", 600));
@@ -30,11 +30,7 @@ public class CarServiceImpl implements CarService {
         add(new Car(++count, model, series));
     }
 
-    public List<Car> listCars() {
-        return cars;
-    }
-
-    public List<Car> listCars(int n) {
-        return cars.subList(0, n);
+    public List<Car> listCars(Long n) {
+        return n == null || n >= 5 ? cars : cars.subList(0, n.intValue());
     }
 }

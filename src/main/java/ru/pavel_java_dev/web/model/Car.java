@@ -1,11 +1,11 @@
 package ru.pavel_java_dev.web.model;
 
 public class Car {
-    private final long id;
+    private final Long id;
     private final String model;
     private final int series;
 
-    public Car(long id, String model, int series) {
+    public Car(Long id, String model, int series) {
         this.id = id;
         this.model = model;
         this.series = series;

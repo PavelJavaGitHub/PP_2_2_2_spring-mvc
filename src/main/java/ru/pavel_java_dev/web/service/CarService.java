@@ -10,7 +10,5 @@ public interface CarService {
 
     void add(String model, int series);
 
-    List<Car> listCars();
-
-    List<Car> listCars(int n);
+    List<Car> listCars(Long n);
 }

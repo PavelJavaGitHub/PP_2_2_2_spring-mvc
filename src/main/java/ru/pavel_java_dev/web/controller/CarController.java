@@ -21,21 +21,8 @@ public class CarController {
     }
 
     @GetMapping()
-    public String viewCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
-        model.addAttribute("cars", count == null || count >= 5
-                ? service.listCars() : service.listCars(count));
+    public String viewCars(@RequestParam(value = "count", required = false) Long count, Model model) {
+        model.addAttribute("cars", service.listCars(count));
         return "cars";
     }
-
-//    @GetMapping("/{count}")
-//    public String viewCars(@PathVariable("count") int count, Model model) {
-//        model.addAttribute("cars", service.listCars(count));
-//        return "cars";
-//    }
-//
-//    @GetMapping()
-//    public String viewAllCars(Model model) {
-//        model.addAttribute("cars", service.listCars());
-//        return "cars";
-//    }
 }
